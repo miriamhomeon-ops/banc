@@ -72,7 +72,7 @@ export default function RendimentosPage() {
                   </div>
                 </div>
                 <p className="text-xs text-muted-foreground">Saldo atual</p>
-                <p className="text-lg font-bold text-card-foreground animate-count-up">R$ 24.105,66</p>
+                <p className="text-lg font-bold text-card-foreground animate-count-up">R$ 24.005,66</p>
               </CardContent>
             </Card>
 
