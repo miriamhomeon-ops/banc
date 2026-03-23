@@ -61,7 +61,7 @@ export default function HomePage() {
             <CardContent className="p-6">
               <p className="text-muted-foreground text-sm mb-1">Saldo total</p>
               <p className="text-3xl font-bold text-card-foreground mb-2 animate-count-up">
-                R$ 24.105,66
+                R$ 24.005,66
               </p>
               <div className="flex items-center gap-2 mb-4">
                 <span className="text-xs bg-primary/10 text-primary-foreground px-2 py-1 rounded-full font-medium animate-scale-in" style={{ backgroundColor: 'rgba(245, 197, 24, 0.15)', color: '#b8940e' }}>
