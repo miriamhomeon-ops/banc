@@ -38,7 +38,7 @@ export default function ExtratoPage() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm text-muted-foreground">Saldo atual</p>
-                  <p className="text-2xl font-bold text-card-foreground animate-count-up">R$ 24.105,66</p>
+                  <p className="text-2xl font-bold text-card-foreground animate-count-up">R$ 24.005,66</p>
                 </div>
                 <div className="w-12 h-12 bg-success/10 rounded-full flex items-center justify-center animate-scale-in">
                   <TrendingUp className="h-6 w-6 text-success" />
