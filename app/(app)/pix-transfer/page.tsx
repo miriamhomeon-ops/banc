@@ -110,7 +110,7 @@ export default function PixTransferPage() {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-xs text-muted-foreground">Saldo disponível</p>
-              <p className="text-lg font-bold text-card-foreground">R$ 24.105,66</p>
+              <p className="text-lg font-bold text-card-foreground">R$ 24.005,66</p>
             </div>
             <div 
               className="px-3 py-1 rounded-full text-xs font-medium"
