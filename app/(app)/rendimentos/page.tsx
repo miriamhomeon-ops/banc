@@ -172,9 +172,9 @@ export default function RendimentosPage() {
               <p className="text-sm font-semibold text-card-foreground mb-3">Resumo mensal</p>
               <div className="space-y-3">
                 {[
-                  { month: "Março 2026", earnings: 31.03 },
-                  { month: "Fevereiro 2026", earnings: 89.42 },
-                  { month: "Janeiro 2026", earnings: 95.18 },
+                  { month: "Março 2026", earnings: 187.03 },
+                  { month: "Fevereiro 2026", earnings: 209.42 },
+                  { month: "Janeiro 2026", earnings: 195.18 },
                 ].map((item, index) => (
                   <div
                     key={index}
