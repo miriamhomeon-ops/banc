@@ -1,4 +1,3 @@
-// app/layout.tsx
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
@@ -51,9 +50,4 @@ export default function RootLayout({
       </body>
     </html>
   )
-}
-
-// app/(app)/configuracoes/layout.tsx
-export default function ConfiguracoesLayout({ children }: { children: React.ReactNode }) {
-  return <div className="min-h-screen p-4">{children}</div>;
 }
