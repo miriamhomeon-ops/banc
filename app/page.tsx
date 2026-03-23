@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useCallback } from "react"
+import { useState, useEffect } from "react"
 import { useAuth } from "@/lib/auth-context"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -13,51 +13,38 @@ export default function LoginPage() {
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [checkingAuth, setCheckingAuth] = useState(true)
-  const [shouldRedirect, setShouldRedirect] = useState(false)
   const { login, user, isLoading } = useAuth()
 
-  const performRedirect = useCallback(() => {
-    if (shouldRedirect) {
+  // Redireciona automaticamente quando o usuário está logado
+  useEffect(() => {
+    if (user) {
       window.location.href = "/home"
     }
-  }, [shouldRedirect])
-
-  useEffect(() => {
-    performRedirect()
-  }, [performRedirect])
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (!isLoading) {
-        const isLogged = localStorage.getItem("loggedIn")
-        if (isLogged === "true" || user) {
-          setShouldRedirect(true)
-        } else {
-          setCheckingAuth(false)
-        }
-      }
-    }, 100)
-    return () => clearTimeout(timer)
-  }, [isLoading, user])
+  }, [user])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setError("")
     setIsSubmitting(true)
 
+    // Simula delay de loading
     await new Promise(resolve => setTimeout(resolve, 800))
 
-    const success = login(username, password)
-    if (success) {
-      window.location.href = "/home"
-    } else {
-      setError("Usuário ou senha inválidos")
+    try {
+      const success = await login(username, password) // ✅ await
+      if (!success) {
+        setError("Usuário ou senha inválidos")
+        setIsSubmitting(false)
+      }
+      // Se login tiver sucesso, o useEffect acima faz o redirect
+    } catch (err) {
+      setError("Erro ao logar, tente novamente")
       setIsSubmitting(false)
     }
   }
 
-  if (checkingAuth || isLoading || shouldRedirect) {
+  // Tela de loading enquanto verifica se já está logado
+  if (isLoading) {
     return (
       <main className="min-h-screen flex items-center justify-center bg-primary">
         <div className="text-center">
