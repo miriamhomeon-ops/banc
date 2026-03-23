@@ -13,6 +13,11 @@ const quickActions = [
   { icon: Copy, label: "Pix Copia e Cola", href: "/pix-transfer" },
   { icon: QrCode, label: "Escanear QR Code", href: "/pix-transfer" },
   { icon: TrendingUp, label: "Lucros", href: "/rendimentos" },
+
+  { icon: ArrowRightLeft, label: "Pagar boleto", href: "/pagamentos" },
+  { icon: Copy, label: "Recarga celular", href: "/recarga" },
+  { icon: TrendingUp, label: "Investimentos", href: "/investimentos" },
+  { icon: ArrowRightLeft, label: "Dados pessoais", href: "/dados-pessoais" },
 ]
 
 export default function HomePage() {
